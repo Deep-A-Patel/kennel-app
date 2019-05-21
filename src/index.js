@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router } from "react-router-dom";
-import Kennel from "./components/Kennel";
+import Kennel from "./components/kennel";
 
 import "./index.css";
 
