@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import NavBar from "./nav/NavBar";
 import ApplicationViews from "./ApplicationViews";
+import Footer from "./footer/footer";
 
-// import "./Kennel.css";
+import "./kennel.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 class Kennel extends Component {
@@ -11,6 +12,7 @@ class Kennel extends Component {
       <React.Fragment>
         <NavBar />
         <ApplicationViews />
+        <Footer />
       </React.Fragment>
     );
   }

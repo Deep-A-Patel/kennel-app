@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import AnimalList from "./animal/AnimalList";
 import LocationList from "./location/LocationList";
 import EmployeeList from "./employee/EmployeeList";
+import AnimalManager from "../modules/AnimalManager";
 
 class ApplicationViews extends Component {
   employeesFromAPI = [
@@ -29,12 +30,35 @@ class ApplicationViews extends Component {
   state = {
     employees: this.employeesFromAPI,
     locations: this.locationsFromAPI,
-    animals: this.animalsFromAPI
+    animals: []
   };
 
+  deleteAnimal = id => {
+    const newState = {};
+    AnimalManager.deleteAnimal(id)
+      .then(AnimalManager.getAll)
+      .then(animals => {
+        console.log("animals", animals);
+        newState.animals = animals;
+      })
+      .then(() => this.setState(newState));
+  };
+
+  componentDidMount() {
+    console.log("APPVIEWS componentDidMount");
+    const newState = {};
+    AnimalManager.getAll()
+      .then(animals => {
+        console.log("animals", animals);
+        newState.animals = animals;
+      })
+      .then(() => this.setState(newState));
+  }
+
   render() {
+    console.log("APPVIEWS render");
     return (
-      <React.Fragment>
+      <>
         <Route
           exact
           path="/"
@@ -45,7 +69,12 @@ class ApplicationViews extends Component {
         <Route
           path="/animals"
           render={props => {
-            return <AnimalList animals={this.state.animals} />;
+            return (
+              <AnimalList
+                animals={this.state.animals}
+                deleteAnimal={this.deleteAnimal}
+              />
+            );
           }}
         />
         <Route
@@ -54,7 +83,7 @@ class ApplicationViews extends Component {
             return <EmployeeList employees={this.state.employees} />;
           }}
         />
-      </React.Fragment>
+      </>
     );
   }
 }
