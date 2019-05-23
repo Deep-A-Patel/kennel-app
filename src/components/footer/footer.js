@@ -4,7 +4,7 @@ import "./footer.css";
 export default function Footer() {
   return (
     <footer>
-      <p>&copy; NSS Cohort 32</p>
+      <p>&copy; You Are Lucky Enough To Have A Dog</p>
     </footer>
   );
 }
