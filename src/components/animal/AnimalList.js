@@ -23,6 +23,7 @@ export default class AnimalList extends Component {
             <AnimalItem
               key={item.id}
               animal={item}
+              {...this.props}
               deleteAnimal={this.props.deleteAnimal}
             />
           );

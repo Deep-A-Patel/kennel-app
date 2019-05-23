@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import location from "./location.jpg";
+import "./Location.css";
 
 class LocationItem extends Component {
   state = {
