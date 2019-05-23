@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import "./Animal.css";
 import dog from "./dog.jpg";
 
 export default class Animal extends Component {

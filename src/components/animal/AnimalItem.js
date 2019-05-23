@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import dog from "./dog.jpg";
+import "./Animal.css";
 
 class AnimalItem extends Component {
   state = {
@@ -26,6 +27,15 @@ class AnimalItem extends Component {
         <Link className="btn" to={`/animals/${this.props.animal.id}`}>
           Details
         </Link>
+        <button
+          type="button"
+          className="btn btn-success"
+          onClick={() => {
+            this.props.history.push(`/animals/${this.props.animal.id}/edit`);
+          }}
+        >
+          Edit
+        </button>
       </article>
     );
   }
