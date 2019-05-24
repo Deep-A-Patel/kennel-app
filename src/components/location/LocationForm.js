@@ -5,8 +5,7 @@ export default class LocationForm extends Component {
   // Set initial state
   state = {
     locationName: "",
-    address: "",
-    employeeId: ""
+    address: ""
   };
 
   // Update state whenever an input field is edited
@@ -27,9 +26,7 @@ export default class LocationForm extends Component {
     } else {
       const location = {
         name: this.state.locationName,
-        address: this.state.address,
-        // Make sure the employeeId is saved to the database as a number since it is a foreign key.
-        employeeId: parseInt(this.state.employeeId)
+        address: this.state.address
       };
 
       // Create the location and redirect user to location list
@@ -62,22 +59,6 @@ export default class LocationForm extends Component {
               id="address"
               placeholder="Address"
             />
-          </div>
-          <div className="form-group">
-            <label htmlFor="employee">Assign to employee</label>
-            <select
-              defaultValue=""
-              name="employee"
-              id="employeeId"
-              onChange={this.handleFieldChange}
-            >
-              <option value="">Select an employee</option>
-              {this.props.employees.map(e => (
-                <option key={e.id} id={e.id} value={e.id}>
-                  {e.name}
-                </option>
-              ))}
-            </select>
           </div>
           <button
             type="button"

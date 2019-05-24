@@ -128,6 +128,7 @@ class ApplicationViews extends Component {
     console.log("APPVIEWS render");
     return (
       <>
+        {/* Login */}
         <Route path="/login" component={Login} />
         <Route
           exact
@@ -138,6 +139,7 @@ class ApplicationViews extends Component {
                 <EmployeeList
                   deleteEmployee={this.deleteEmployee}
                   employees={this.state.employees}
+                  animals={this.state.animals}
                 />
               );
             } else {
@@ -253,12 +255,12 @@ class ApplicationViews extends Component {
           }}
         />
         {/* Employee */}
-        <Route
+        {/* <Route
           path="/employees"
           render={props => {
             return <EmployeeList employees={this.state.employees} />;
           }}
-        />
+        /> */}
       </>
     );
   }

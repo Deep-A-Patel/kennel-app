@@ -21,6 +21,7 @@ class LocationItem extends Component {
       <article>
         <img src={location} className="icon--location" />
         <h3>{this.props.location.name}</h3>
+        <h4>{this.props.location.address}</h4>
         <button onClick={this.handleClick} disabled={this.state.saveDisabled}>
           Delete
         </button>
