@@ -20,27 +20,39 @@
   "animals": [
     {
       "id": 1,
-      "name": "Doodles"
+      "name": "Doodles",
+      "breed": "Alaskan Malamute",
+      "employeeId": 1
     },
     {
       "id": 2,
-      "name": "Jack"
+      "name": "Jack",
+      "breed": "Afghan Hound",
+      "employeeId": 2
     },
     {
       "id": 3,
-      "name": "Angus"
+      "name": "Angus",
+      "breed": "Airedale Terrier",
+      "employeeId": 3
     },
     {
       "id": 4,
-      "name": "Henley"
+      "name": "Henley",
+      "breed": "Akita",
+      "employeeId": 4
     },
     {
       "id": 5,
-      "name": "Derkins"
+      "name": "Derkins",
+      "breed": "American Staffordshire Terrier",
+      "employeeId": 1
     },
     {
       "id": 6,
-      "name": "Checkers"
+      "name": "Checkers",
+      "breed": "American Water Spaniel",
+      "employeeId": 2
     }
   ],
   "locations": [
